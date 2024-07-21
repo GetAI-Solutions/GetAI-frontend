@@ -22,7 +22,7 @@ const Landing = () => {
           </button>
         </Link>
         <p className="text-sm text-gray-600">
-          By continuing you accept our <a href="#" className="underline">Terms of Service</a> and <a href="#" className="underline">Privacy Policy</a>
+          By continuing you accept our <a href="#" className="underline">Terms of Service</a> and <a href="/" className="underline">Privacy Policy</a>
         </p>
       </div>
     </div>
