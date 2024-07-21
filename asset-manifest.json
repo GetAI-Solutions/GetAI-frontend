@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/GetAI-frontend//static/css/main.f34c35b0.css",
+    "main.js": "/GetAI-frontend//static/js/main.2432a818.js",
+    "static/js/453.f0a68fb9.chunk.js": "/GetAI-frontend//static/js/453.f0a68fb9.chunk.js",
+    "static/media/logo.png": "/GetAI-frontend//static/media/logo.b7bff34ca715a89c12e0.png",
+    "static/media/phone-barcode.png": "/GetAI-frontend//static/media/phone-barcode.bdcfff3788ca6c0a194a.png",
+    "static/media/pop.png": "/GetAI-frontend//static/media/pop.5b4f761eff0cc3e27f01.png",
+    "index.html": "/GetAI-frontend//index.html",
+    "main.f34c35b0.css.map": "/GetAI-frontend//static/css/main.f34c35b0.css.map",
+    "main.2432a818.js.map": "/GetAI-frontend//static/js/main.2432a818.js.map",
+    "453.f0a68fb9.chunk.js.map": "/GetAI-frontend//static/js/453.f0a68fb9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f34c35b0.css",
+    "static/js/main.2432a818.js"
+  ]
+}
