@@ -1,70 +1,141 @@
-# Getting Started with Create React App
+# GetAI - AI-Powered Product Scanner
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+GetAI is an AI-powered web application that allows users to scan products and obtain comprehensive, localized product information. The app is designed to help consumers, particularly in African markets, quickly access detailed information about food, medicines, and beauty products.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **User Authentication:** Sign up and log in with email or phone number.
+- **Product Scanning:** Use the device's camera to scan product barcodes.
+- **Image Upload:** Upload images of product barcodes for recognition.
+- **Product Information:** Retrieve detailed product information based on the scanned or uploaded barcode.
+- **Chatbot Interaction:** Engage with a chatbot for more details about the product.
+- **Responsive Design:** Optimized for mobile view with a clean and intuitive interface.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Frontend:** React, Tailwind CSS
+- **Backend:** Express, MongoDB
+- **AI Integration:** TensorFlow.js for barcode recognition
 
-### `npm test`
+## Project Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+GetAI
+├── public
+│ ├── index.html
+│ └── ...
+├── src
+│ ├── assets
+│ │ ├── images
+│ │ └── ...
+│ ├── components
+│ │ ├── Auth
+│ │ │ ├── Login.js
+│ │ │ └── Signup.js
+│ │ ├── Home.js
+│ │ ├── NoProductHistory.js
+│ │ ├── ProductScanner.js
+│ │ └── ...
+│ ├── hooks
+│ │ └── useCamera.js
+│ ├── pages
+│ │ ├── HomePage.js
+│ │ └── ...
+│ ├── App.js
+│ ├── index.js
+│ └── ...
+└── ...
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Ensure you have the following installed:
 
-### `npm run eject`
+- Node.js
+- npm or yarn
+- MongoDB
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   git clone https://github.com/yourusername/GetAI.git
+   cd GetAI
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+Install dependencies:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+npm install
+Set up environment variables:
 
-### Code Splitting
+Create a .env file in the root directory and add your environment variables:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+env
+REACT_APP_API_URL=http://localhost:5000
+Start the development server:
 
-### Analyzing the Bundle Size
+npm start
+Run the backend server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+cd backend
+npm install
+npm start
+Usage
+Authentication
+Sign Up: Users can sign up using their email or phone number.
+Log In: Users can log in using their credentials.
+Scanning Products
+Scan: Click the "Scan" button to open the device's camera and scan a product barcode.
+Upload: Click the "Upload" button to upload an image of the product barcode.
+Viewing Product Information
+After scanning or uploading, users will be presented with detailed information about the product.
+Users can interact with a chatbot for more information about the product.
+Customization
+Changing the Country Code Selector
+Install the react-select-country-list package to enable dynamic country code selection with flags:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+npm install react-select-country-list
+Update the SignupPhone component to use the country selector:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+import CountrySelect from 'react-select-country-list';
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+const options = useMemo(() => CountrySelect().getData(), []);
+Toggling Password Visibility
+Implement password visibility toggle in the SignupPhone component:
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+const [passwordVisible, setPasswordVisible] = useState(false);
+
+const togglePasswordVisibility = () => {
+  setPasswordVisible(!passwordVisible);
+};
+
+// Inside the render method
+<input 
+  type={passwordVisible ? "text" : "password"}
+  placeholder="Password"
+  className="flex-grow bg-transparent outline-none"
+/>
+<button onClick={togglePasswordVisibility}>
+  {passwordVisible ? "Hide" : "Show"}
+</button>
+Contributing
+Contributions are welcome! Please fork the repository and create a pull request with your changes.
+
+License
+This project is licensed under the MIT License.
+
+Contact
+For any inquiries or issues, please contact us at support@getai.com.
+
+
+
+Feel free to customize any part of this README to better suit your project's needs.
