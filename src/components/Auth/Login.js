@@ -122,7 +122,7 @@ const Login = () => {
         </div>
 
         <div className="flex justify-between mb-6">
-          <Link to="/forgot-password" className="text-teal-600">Forgot password?</Link>
+          <Link to="/camera" className="text-teal-600">Forgot password?</Link>
           <button onClick={() => setIsPhoneLogin(!isPhoneLogin)} className="text-teal-600">
             {isPhoneLogin ? "Use email instead" : "Use phone instead"}
           </button>
