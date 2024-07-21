@@ -59,7 +59,7 @@ const SignupPhone = () => {
 
   const handleContinue = () => {
     navigate({
-      pathname: '/verify-phone',
+      pathname: '/email-signup',
       state: {
         phoneNumber,
         dialCode: selectedCountry.dialCode

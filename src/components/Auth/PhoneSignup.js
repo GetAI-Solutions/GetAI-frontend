@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const VerifyPhone = () => {
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
   const location = useLocation();
   const phoneNumber = location.state?.phoneNumber || '';
   const dialCode = location.state?.dialCode || '';
+  const navigate = useNavigate()
 
   const handleChange = (e, index) => {
     const newOtp = [...otp];
@@ -20,6 +21,13 @@ const VerifyPhone = () => {
 
   const handleSubmit = () => {
     const enteredOtp = otp.join('');
+    navigate({
+        pathname: '/login',
+        state: {
+          phoneNumber,
+          dialCode
+        }
+      });
     console.log('Entered OTP:', enteredOtp);
     // Implement OTP verification logic here
   };
@@ -53,7 +61,7 @@ const VerifyPhone = () => {
 
         <button 
           onClick={handleSubmit}
-          className={`w-full py-3 text-white rounded-md ${otp.every(digit => digit) ? 'bg-teal-600' : 'bg-gray-400 cursor-not-allowed'}`} 
+          className={`mt-28 w-full py-3 text-white rounded-md ${otp.every(digit => digit) ? 'bg-teal-600' : 'bg-gray-400 cursor-not-allowed'}`} 
           disabled={!otp.every(digit => digit)}
         >
           Verify
